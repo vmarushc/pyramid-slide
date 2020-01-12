@@ -1,9 +1,18 @@
-const button = document.getElementById("mySelect");
+var bricks = "#";
+var height = 8;
+printPyramid(height, bricks);
 
- button.addEventListener("change", function(event) {
- 	var bricks = document.getElementById("mySelect").value;
- 	printPyramid(5, bricks);
-  });
+const select = document.getElementById("mySelect");
+select.addEventListener("change", function(event) {
+	bricks = document.getElementById("mySelect").value;
+	printPyramid(height, bricks);
+});
+
+const element_height = document.getElementById("height"); 
+element_height.addEventListener("change", function(event) {
+	height = document.getElementById("height").value;
+	printPyramid(height, bricks);
+});
 
 function printPyramid(height, bricks) {
 
